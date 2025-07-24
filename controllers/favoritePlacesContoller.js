@@ -2,9 +2,9 @@ const FavoritePlace = require("../models/favoritePlacesModel");
 
 const createFavoritePlace = async (req, res) => {
   try {
-    const { user, location } = req.body;
+    const { user, locations } = req.body;
 
-    if (!user || !location || !Array.isArray(location)) {
+    if (!user || !locations || !Array.isArray(locations)) {
       return res
         .status(400)
         .json({ error: "User and location array are required." });
@@ -12,7 +12,7 @@ const createFavoritePlace = async (req, res) => {
 
     const newFavoritePlace = await FavoritePlace.create({
       user,
-      locations: location,
+      locations: locations,
     });
 
     return res.status(201).json({
