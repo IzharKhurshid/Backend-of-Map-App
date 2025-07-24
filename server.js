@@ -7,7 +7,7 @@ const favoritePlacesRoutes = require("./routes/favoritePlacesRoutes");
 dotenv.config();
 const app = express();
 
-const Port = process.env.port;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
@@ -16,7 +16,7 @@ app.use(cors());
 app.use('/api/favoriteplaces',favoritePlacesRoutes)
 
 
-app.listen(Port, () => {
-  console.log(`Server is running on Port : ${Port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on Port : ${PORT}`);
   conectDB();
 });
