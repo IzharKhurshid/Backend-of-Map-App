@@ -4,7 +4,7 @@ const createFavoritePlace = async (req, res) => {
   try {
     const { user, locations } = req.body;
 
-    if (!user || !locations || !Array.isArray(location)) {
+    if (!user || !locations || !Array.isArray(locations)) {
       return res
         .status(400)
         .json({ error: "User and location array are required." });
